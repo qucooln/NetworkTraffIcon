@@ -7,10 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "NetworkTraffFetcher.h"
 
 @implementation AppDelegate
 
-@synthesize window = _window;
+//@synthesize window = _window;
 
 - (void)dealloc
 {
@@ -20,6 +21,8 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    NetworkTraffFetcher* NetFetcher=[[NetworkTraffFetcher alloc] init];
+    [NetFetcher UpdateTraffic];
 }
 
 @end
