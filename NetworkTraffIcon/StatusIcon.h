@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LoginHelper.h"
+#import "SingletonDataClass.h"
 
 @interface StatusIcon : NSObject
 
 -(void)ShowStatusIcon:(NSStatusBar*)bar: (NSStatusItem*) statusItem: (NSMenu*) theMenu: (NSString*) Traff;
+
 
 @end

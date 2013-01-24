@@ -7,6 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ASIHTTPRequest.h"
+#import "LoginHelper.h"
+#import <CommonCrypto/CommonDigest.h>
+
 @class StatusIcon;
 
 @interface NetworkTraffFetcher : NSObject<NSURLConnectionDelegate>{
@@ -16,6 +20,9 @@
     NSStatusItem *statusItem;
     NSMenu *theMenu;
     StatusIcon* statusIco;
+    NSMutableDictionary* loginParaDictionary;
+    NSString *username;
+    NSString *password;
 }
 
 -(void) FetchNetworkTraffic;

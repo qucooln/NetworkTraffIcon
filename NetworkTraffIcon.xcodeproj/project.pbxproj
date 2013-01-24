@@ -13,9 +13,11 @@
 		2882219B156D082F005C793F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 28822199156D082F005C793F /* Credits.rtf */; };
 		2882219E156D082F005C793F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2882219D156D082F005C793F /* AppDelegate.m */; };
 		288221A1156D0830005C793F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2882219F156D0830005C793F /* MainMenu.xib */; };
+		288AC99516B112AD00E57704 /* LoginHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 288AC99416B112AD00E57704 /* LoginHelper.m */; };
+		288AC9A916B16DA600E57704 /* SingletonDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 288AC9A816B16DA600E57704 /* SingletonDataClass.m */; };
 		289C1C11156D091700B4F89F /* StatusIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 289C1C10156D091700B4F89F /* StatusIcon.m */; };
 		28BD50231576700B00D33711 /* basket_full.icns in Resources */ = {isa = PBXBuildFile; fileRef = 28BD50221576700B00D33711 /* basket_full.icns */; };
-		28E06E5C156D0D890078FD8E /* NetworkTraffFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E06E5B156D0D890078FD8E /* NetworkTraffFetcher.m */; };
+		28E06E5C156D0D890078FD8E /* NetworkTraffFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E06E5B156D0D890078FD8E /* NetworkTraffFetcher.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		28FB9A0216AE840600518BA5 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FB99EF16AE840600518BA5 /* ASIDataCompressor.m */; };
 		28FB9A0316AE840600518BA5 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FB99F116AE840600518BA5 /* ASIDataDecompressor.m */; };
 		28FB9A0416AE840600518BA5 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FB99F316AE840600518BA5 /* ASIDownloadCache.m */; };
@@ -40,6 +42,10 @@
 		2882219C156D082F005C793F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2882219D156D082F005C793F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		288221A0156D0830005C793F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		288AC99316B112AD00E57704 /* LoginHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginHelper.h; sourceTree = "<group>"; };
+		288AC99416B112AD00E57704 /* LoginHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHelper.m; sourceTree = "<group>"; };
+		288AC9A716B16DA600E57704 /* SingletonDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonDataClass.h; sourceTree = "<group>"; };
+		288AC9A816B16DA600E57704 /* SingletonDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonDataClass.m; sourceTree = "<group>"; };
 		289C1C0F156D091700B4F89F /* StatusIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusIcon.h; sourceTree = "<group>"; };
 		289C1C10156D091700B4F89F /* StatusIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusIcon.m; sourceTree = "<group>"; };
 		28BD50221576700B00D33711 /* basket_full.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = basket_full.icns; sourceTree = "<group>"; };
@@ -121,8 +127,12 @@
 				2882219F156D0830005C793F /* MainMenu.xib */,
 				28E06E5A156D0D890078FD8E /* NetworkTraffFetcher.h */,
 				28E06E5B156D0D890078FD8E /* NetworkTraffFetcher.m */,
+				288AC99316B112AD00E57704 /* LoginHelper.h */,
+				288AC99416B112AD00E57704 /* LoginHelper.m */,
 				289C1C0F156D091700B4F89F /* StatusIcon.h */,
 				289C1C10156D091700B4F89F /* StatusIcon.m */,
+				288AC9A716B16DA600E57704 /* SingletonDataClass.h */,
+				288AC9A816B16DA600E57704 /* SingletonDataClass.m */,
 				28FB99EA16AE840600518BA5 /* ASIHttpRequest */,
 				28822191156D082F005C793F /* Supporting Files */,
 			);
@@ -250,6 +260,8 @@
 				28FB9A0616AE840600518BA5 /* ASIHTTPRequest.m in Sources */,
 				28FB9A0716AE840600518BA5 /* ASIInputStream.m in Sources */,
 				28FB9A0816AE840600518BA5 /* ASINetworkQueue.m in Sources */,
+				288AC99516B112AD00E57704 /* LoginHelper.m in Sources */,
+				288AC9A916B16DA600E57704 /* SingletonDataClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +315,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -323,7 +335,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -334,6 +346,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetworkTraffIcon/NetworkTraffIcon-Prefix.pch";
 				INFOPLIST_FILE = "NetworkTraffIcon/NetworkTraffIcon-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -345,6 +358,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NetworkTraffIcon/NetworkTraffIcon-Prefix.pch";
 				INFOPLIST_FILE = "NetworkTraffIcon/NetworkTraffIcon-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

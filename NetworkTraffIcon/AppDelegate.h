@@ -7,9 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SingletonDataClass.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate>{
+    NSWindow *settingWindow;
+    NSString *username;
+    NSString *password;
+}
+@property (assign) IBOutlet NSTextField *TextFieldUserName;
+@property (assign) IBOutlet NSSecureTextField *TextFieldPassword;
 
-//@property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSWindow *settingWindow;
 
 @end

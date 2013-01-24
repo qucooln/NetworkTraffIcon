@@ -7,9 +7,9 @@
 //
 
 #import "StatusIcon.h"
-#import "ASIHTTPRequest.h"
 
 @implementation StatusIcon
+
 
 -(void)ShowStatusIcon:(NSStatusBar *)bar :(NSStatusItem *)statusItem :(NSMenu *)theMenu: (NSString*) Traff
 {
@@ -19,7 +19,7 @@
     
     NSMenuItem *item;
     theMenu = [[NSMenu alloc] initWithTitle:@""];
-    item = [theMenu addItemWithTitle:@"Login" action:@selector(Login) keyEquivalent:@"L"];
+    item = [theMenu addItemWithTitle:@"Setting" action:@selector(Setting:) keyEquivalent:@"S"];
     [item setTarget:self];
     [theMenu addItemWithTitle:@"Quit" action:@selector(terminate:) keyEquivalent:@"Q"];
     
@@ -28,34 +28,17 @@
     
 }
 
--(void) Login
+-(void) Setting:(id)sender
 {
-    NSLog(@"login");
+    SingletonDataClass* shareDataManager=[SingletonDataClass sharedManager];
+    [shareDataManager.settingWindow makeKeyAndOrderFront:self];
+    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
     
-    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:@"http://gate.cqu.edu.cn/"]];
-    //[request setPostValue:@"1" forKey:@"go"];
-    [request setRequestMethod:@"POST"];
-    /*[request setPostValue:@"20111402046" forKey:@"DDDDD"];
-    [request setPostValue:@"56352439" forKey:@"upass"];
-    [request setDelegate:self];
-    [request setDidFinishSelector:@selector(requestFinished:)];
-    [request setDidFailSelector:@selector(requestFailed:)];*/
-    [request startAsynchronous];
+    NSUserDefaults *userPrefs = [NSUserDefaults standardUserDefaults];
+    [shareDataManager.TextFieldUserName setStringValue:[userPrefs stringForKey:@"username"]];
+    [shareDataManager.TextFieldPassword setStringValue:[userPrefs stringForKey:@"password"]];
 }
 
-- (void) requestFinished:(ASIHTTPRequest *)request
-{
-    NSString *response = [request responseString];
-    // response contains the HTML response from the form.
-    NSLog(response);
-}
-
-- (void) requestFailed:(ASIHTTPRequest *)request
-{
-    NSError *error = [request error];
-    // Do something with the error.
-    NSLog(error.description);
-}
 
 -(void)dealloc
 {
